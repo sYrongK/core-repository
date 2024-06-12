@@ -24,8 +24,8 @@ jobs:
     - name: Publish to Github Packages
       run: ./gradlew publish
       env: # build.gradle에서 'maven-publish'플러그인을 사용하여 패키지를 GitHub Packages에 배포할 때, GitHub에 인증하기 위해 필요한 환경변수.
-        GITHUB_USERNAME: ${{secrets.GITHUB_USERNAME}} # build.gradle의 credentials에서 사용해서 안전하게 배포할 수 있다.
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        GITHUB_USERNAME: ${{secrets.STORAGE_USERNAME}} # build.gradle의 credentials에서 사용해서 안전하게 배포할 수 있다.
+        GITHUB_TOKEN: ${{secrets.STORAGE_TOKEN}}
 
 
 # 실행 조건: push 이벤트, pull_request 이벤트 등
